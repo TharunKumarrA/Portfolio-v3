@@ -3,5 +3,95 @@ import { Container } from "@/components/layout/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { profile } from "@/content/profile";
 import { pageMetadata } from "@/lib/site";
-export const metadata=pageMetadata("About","Meet Tharun Kumarr A: software developer, curious learner, and builder.","/about");
-export default function About() { return <Container><div className="page-intro"><p className="eyebrow">ABOUT / A LITTLE MORE HUMAN</p><h1>Vanakam.<br /><span className="accent">I’m Tharun.</span></h1></div><div className="about-page"><div className="about-copy"><p>{profile.about}</p><p>{profile.now}</p><p>I’m drawn to the space between a technical problem and the person using the solution. A clear interface, a reliable workflow, and a well-explained decision all matter.</p><p>Beyond the screen, I enjoy space, geopolitics, non-fiction, music, and sport.</p><a className="text-link mt-6" href={profile.links.linkedin}>Connect on LinkedIn ↗</a></div><Image className="about-photo" src="/images/tharun.webp" alt="Tharun Kumarr A" width={760} height={760} sizes="(min-width: 768px) 35vw, 100vw" /></div><section className="section-space" aria-labelledby="skills-heading"><SectionHeading number="MY TOOLKIT" title="Tools follow the problem." id="skills-heading" /><div className="skills-grid">{profile.skills.map(s=><div className="skill-group" key={s.title}><h3>{s.title}</h3><ul>{s.items.map(x=><li key={x}>{x}</li>)}</ul></div>)}</div></section><section className="section-space" aria-labelledby="education-heading"><SectionHeading number="FOUNDATIONS" title="Education." id="education-heading" />{profile.education.map(e=><div className="education-row" key={e.school}><div><h3>{e.school}</h3><p>{e.qualification}</p></div><p>{e.dates}</p></div>)}</section><section className="section-space" aria-labelledby="interests-heading"><SectionHeading number="OFF THE CLOCK" title="Still curious." id="interests-heading" /><ul className="tag-list">{profile.interests.map(i=><li key={i}>{i}</li>)}</ul></section></Container>; }
+export const metadata = pageMetadata(
+  "About",
+  "Meet Tharun Kumarr A: software developer, curious learner, and builder.",
+  "/about",
+);
+export default function About() {
+  return (
+    <Container>
+      <div className="page-intro">
+        <p className="eyebrow">ABOUT / A LITTLE MORE HUMAN</p>
+        <h1>
+          Vanakam.
+          <br />
+          <span className="accent">I’m Tharun.</span>
+        </h1>
+      </div>
+      <div className="about-page">
+        <div className="about-copy">
+          <p>{profile.about}</p>
+          <p>{profile.now}</p>
+          <p>
+            I’m drawn to the space between a technical problem and the person
+            using the solution. A clear interface, a reliable workflow, and a
+            well-explained decision all matter.
+          </p>
+          <p>
+            Beyond the screen, I enjoy space, geopolitics, non-fiction, music,
+            and sport.
+          </p>
+          <a className="text-link mt-6" href={profile.links.linkedin}>
+            Connect on LinkedIn ↗
+          </a>
+        </div>
+        <Image
+          className="about-photo"
+          src="/images/tharun.webp"
+          alt="Tharun Kumarr A"
+          width={760}
+          height={760}
+          sizes="(min-width: 768px) 35vw, 100vw"
+        />
+      </div>
+      <section className="section-space" aria-labelledby="skills-heading">
+        <SectionHeading
+          number="MY TOOLKIT"
+          title="Tools follow the problem."
+          id="skills-heading"
+        />
+        <div className="skills-grid">
+          {profile.skills.map((s) => (
+            <div className="skill-group" key={s.title}>
+              <h3>{s.title}</h3>
+              <ul>
+                {s.items.map((x) => (
+                  <li key={x}>{x}</li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </section>
+      <section className="section-space" aria-labelledby="education-heading">
+        <SectionHeading
+          number="FOUNDATIONS"
+          title="Education."
+          id="education-heading"
+        />
+        {profile.education.map((e) => (
+          <div className="education-row" key={e.school}>
+            <div>
+              <h3>{e.school}</h3>
+              <p>{e.qualification}</p>
+            </div>
+            <p>{e.dates}</p>
+          </div>
+        ))}
+      </section>
+      <section className="section-space" aria-labelledby="interests-heading">
+        <SectionHeading
+          number="OFF THE CLOCK"
+          title="Still curious."
+          id="interests-heading"
+        />
+        <ul className="tag-list">
+          {profile.interests.map((i) => (
+            <li key={i}>{i}</li>
+          ))}
+        </ul>
+      </section>
+    </Container>
+  );
+}
