@@ -7,7 +7,10 @@ import { InteractiveAccent } from "@/components/ui/InteractiveAccent";
 import { ProjectCard } from "@/features/projects/ProjectCard";
 import { getFeaturedProjects } from "@/features/projects/selectors";
 import { profile } from "@/content/profile";
-export default function Home() {
+import { getPublishedPosts } from "@/features/blog/posts";
+import { PostList } from "@/features/blog/PostList";
+export default async function Home() {
+  const latestPosts = (await getPublishedPosts()).slice(0, 3);
   return (
     <>
       <Container>
@@ -47,6 +50,12 @@ export default function Home() {
               SCROLL TO EXPLORE <FiArrowDown aria-hidden="true" />
             </a>
           </div>
+        </section>
+        <section className="section-space" aria-labelledby="writing-heading">
+          <SectionHeading number="WRITING" title="Notes from the journey." id="writing-heading">
+            <Link className="text-link" href="/writing">All writing →</Link>
+          </SectionHeading>
+          <PostList posts={latestPosts} />
         </section>
         <section
           id="selected-work"

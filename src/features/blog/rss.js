@@ -1,0 +1,5 @@
+const escapeXml = value => String(value).replace(/[<>&"']/g, char => ({ '<': '&lt;', '>': '&gt;', '&': '&amp;', '"': '&quot;', "'": '&apos;' })[char]);
+export function createRss(posts, origin, author) {
+  const url = path => escapeXml(new URL(path, origin).href);
+  return `<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>${escapeXml(author)} — Writing</title><link>${url('/writing')}</link><description>Essays and notes by ${escapeXml(author)}</description><language>en</language><atom:link href="${url('/rss.xml')}" rel="self" type="application/rss+xml"/>${posts.map(post => `<item><title>${escapeXml(post.title)}</title><link>${url(`/writing/${post.slug}`)}</link><guid isPermaLink="true">${url(`/writing/${post.slug}`)}</guid><description>${escapeXml(post.description)}</description><pubDate>${new Date(`${post.publishedAt}T00:00:00Z`).toUTCString()}</pubDate>${post.tags.map(tag => `<category>${escapeXml(tag)}</category>`).join('')}</item>`).join('')}</channel></rss>`;
+}

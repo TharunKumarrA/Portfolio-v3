@@ -28,6 +28,7 @@ export const metadata = {
   },
   description:
     "Full-stack applications, thoughtful interfaces, and practical automation. Explore the work and experience of Tharun Kumarr A.",
+  ...(origin ? { alternates: { types: { "application/rss+xml": new URL("/rss.xml", origin).href } } } : {}),
   authors: [{ name: "Tharun Kumarr A" }],
   openGraph: {
     type: "website",
