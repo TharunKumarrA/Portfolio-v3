@@ -3,7 +3,6 @@ import { Container } from "@/components/layout/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { profile } from "@/content/profile";
 import { pageMetadata } from "@/lib/site";
-import { OrbitMark } from "@/components/ui/OrbitMark";
 export const metadata = pageMetadata(
   "About",
   "Meet Tharun Kumarr A: software developer, curious learner, and builder.",
@@ -20,7 +19,7 @@ export default function About() {
           <span className="accent">I’m Tharun.</span>
         </h1>
       </div>
-      <div className="about-page about-field">
+      <div className="about-page">
         <div className="about-copy">
           <p>{profile.about}</p>
           <p>{profile.now}</p>
@@ -37,7 +36,7 @@ export default function About() {
             Connect on LinkedIn ↗
           </a>
         </div>
-        <div className="about-image-wrap"><OrbitMark label="CURIOUS / ALWAYS" className="about-orbit" /><Image className="about-photo" src="/images/tharun.webp" alt="Tharun Kumarr A" width={760} height={760} sizes="(min-width: 768px) 35vw, 100vw" /></div>
+        <Image className="about-photo" src="/images/tharun.webp" alt="Tharun Kumarr A" width={760} height={760} sizes="(min-width: 768px) 35vw, 100vw" />
       </div>
       <section className="section-space" aria-labelledby="skills-heading">
         <SectionHeading

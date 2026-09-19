@@ -2,18 +2,16 @@
 
 ## Direction
 
-A personal field system: structured layouts, coral emphasis, readable headings, real project screenshots, and restrained orbit details. The visual system signals space and curiosity without using generic AI motifs, particles, glass panels, or decorative gradients.
+A dark editorial portfolio: warm off-white type on charcoal, coral reserved for emphasis and action, generous reading widths, and real project imagery. Personality comes from typography and calm composition, not decoration.
 
 ## Foundations
 
-Tokens live in `src/app/globals.css`. Dark and light palettes share coral as the highlight color; each gives equal contrast and hierarchy to the same content. Rubik is the default body font; Space Mono is reserved for branding, labels, dates, indices, and orbit annotations. Local font assets use swap rendering and eliminate font-download dependencies during build.
-
-Container: 1240px maximum with fluid gutters. Sections use normal grid/flex layout. Main body is at least 16px; secondary metadata is 12–14px. Interactive targets have clear focus outlines. Essential navigation wraps at 320px.
+`src/app/globals.css` is the single source of visual tokens. The layout uses one container width, responsive gutters, and a four-step spacing scale: compact metadata, standard component spacing, section spacing, and hero spacing. Rubik is the reading font; Space Mono is restricted to labels, dates, navigation, and indices.
 
 ## States
 
-Links: rest, hover, visible keyboard focus, current route. Copy: idle, pending, success, failure. Projects: image present/absent, demo present/absent, normal/long text. Theme defaults to the device preference, then persists a visitor’s explicit light/dark choice locally. Orbit marks are decorative, never animated, and never cover text. Reduced motion disables optional mark rotation. No hidden card content, auto-advancing experience, or global content opacity gate.
+Links have rest, hover, current-route, and visible keyboard-focus states. Copy has idle, pending, success, and failure states. Projects cover image present/absent and optional external links. The site is dark-only; it does not store visual preferences or render decorative overlays.
 
 ## Acceptance
 
-Check 320, 390, 768, 1024, and 1440px; 200% zoom; keyboard-only navigation; reduced motion; clipboard denial; a failed image; unknown routes. Hiding overflow globally is not an acceptable fix for clipped text.
+Check 320, 390, 768, 1024, and 1440px; 200% zoom; keyboard-only navigation; reduced motion; clipboard denial; a failed image; and unknown routes. The spacing scale must be applied consistently rather than fixed with page-specific offsets.

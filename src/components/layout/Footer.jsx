@@ -3,12 +3,10 @@ import { FiArrowUpRight, FiGithub, FiLinkedin } from "react-icons/fi";
 import { Container } from "./Container";
 import { profile } from "@/content/profile";
 import { CopyEmailButton } from "@/features/contact/CopyEmailButton";
-import { OrbitMark } from "@/components/ui/OrbitMark";
 export function Footer() {
   return (
     <footer className="site-footer" id="contact">
-      <Container className="footer-field">
-        <OrbitMark label="CONTACT / 05" className="footer-orbit" />
+      <Container>
         <div className="footer-top">
           <div>
             <p className="eyebrow">HAVE SOMETHING IN MIND?</p>

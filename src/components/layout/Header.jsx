@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { Container } from "./Container";
 import { Navigation } from "./Navigation";
-import { ThemeToggle } from "@/features/theme/ThemeToggle";
 export function Header() {
   return (
     <header className="site-header">
@@ -14,10 +13,7 @@ export function Header() {
             THARUN<span className="wordmark-suffix"> KUMARR</span>
           </span>
         </Link>
-        <div className="header-actions">
-          <Navigation />
-          <ThemeToggle />
-        </div>
+        <Navigation />
       </Container>
     </header>
   );

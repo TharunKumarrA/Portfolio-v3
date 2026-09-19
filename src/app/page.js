@@ -1,22 +1,18 @@
-import Image from "next/image";
 import Link from "next/link";
-import { FiArrowDown, FiArrowUpRight } from "react-icons/fi";
+import { FiArrowUpRight } from "react-icons/fi";
 import { Container } from "@/components/layout/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { InteractiveAccent } from "@/components/ui/InteractiveAccent";
 import { ProjectCard } from "@/features/projects/ProjectCard";
 import { getFeaturedProjects } from "@/features/projects/selectors";
 import { profile } from "@/content/profile";
 import { getPublishedPosts } from "@/features/blog/posts";
 import { PostList } from "@/features/blog/PostList";
-import { OrbitMark } from "@/components/ui/OrbitMark";
 export default async function Home() {
   const latestPosts = (await getPublishedPosts()).slice(0, 3);
   return (
     <>
       <Container>
         <section className="hero" aria-labelledby="hero-title">
-          <OrbitMark label="CHENNAI / INDIA" className="hero-orbit" />
           <div className="hero-top">
             <p className="eyebrow">
               <span className="status-dot" /> SOFTWARE DEVELOPER
@@ -29,7 +25,6 @@ export default async function Home() {
               <br />
               <span className="accent">Dependable systems.</span>
             </h1>
-            <InteractiveAccent />
           </div>
           <div className="hero-bottom">
             <p>
@@ -45,12 +40,6 @@ export default async function Home() {
                 View résumé <FiArrowUpRight aria-hidden="true" />
               </Link>
             </div>
-          </div>
-          <div className="hero-footnote">
-            <span>Currently · Analyst at Goldman Sachs</span>
-            <a href="#selected-work">
-              SCROLL TO EXPLORE <FiArrowDown aria-hidden="true" />
-            </a>
           </div>
         </section>
         <section className="section-space" aria-labelledby="writing-heading">
@@ -79,34 +68,14 @@ export default async function Home() {
             ))}
           </div>
         </section>
-        <section
-          className="about-teaser section-space"
-          aria-labelledby="about-heading"
-        >
-          <div className="portrait-wrap personal-portrait">
-            <Image
-              src="/images/tharun.webp"
-              width={760}
-              height={760}
-              alt="Tharun Kumarr A"
-              sizes="(min-width: 768px) 35vw, 100vw"
-            />
-            <span className="portrait-caption">A LITTLE ABOUT THE PERSON · SPACE / DRUMS / FOOTBALL</span>
-          </div>
+        <section className="about-teaser section-space" aria-labelledby="about-heading">
+          <p className="eyebrow">02 / BEYOND THE CODE</p>
           <div>
-            <p className="eyebrow">02 / BEYOND THE CODE</p>
-            <h2 id="about-heading">
-              Curious by nature.
-              <br />A builder by choice.
-            </h2>
+            <h2 id="about-heading">Curious by nature.<br />A builder by choice.</h2>
             <p className="muted">{profile.about}</p>
-            <p className="muted">
-              Outside development: space, drums, football, and a good book.
-            </p>
-            <Link className="text-link" href="/about">
-              More about me <FiArrowUpRight aria-hidden="true" />
-            </Link>
+            <p className="muted">Outside development: space, drums, football, and a good book.</p>
           </div>
+          <Link className="text-link" href="/about">More about me <FiArrowUpRight aria-hidden="true" /></Link>
         </section>
         <section className="current-strip" aria-labelledby="now-heading">
           <div>
