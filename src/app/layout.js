@@ -38,10 +38,12 @@ export const metadata = {
   },
   twitter: { card: "summary" },
 };
-export const viewport = { themeColor: "#141414" };
+export const viewport = { themeColor: [{ media: "(prefers-color-scheme: light)", color: "#f4f0e8" }, { media: "(prefers-color-scheme: dark)", color: "#171719" }] };
+const themeScript = `(()=>{try{const key="tharun-theme";const saved=localStorage.getItem(key);const theme=saved==="light"||saved==="dark"?saved:matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";document.documentElement.dataset.theme=theme;document.documentElement.style.colorScheme=theme}catch{}})();`;
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head><script dangerouslySetInnerHTML={{ __html: themeScript }} /></head>
       <body className={`${mono.variable} ${rubik.variable} font-body`}>
         <a className="skip-link" href="#main">
           Skip to content

@@ -9,12 +9,14 @@ import { getFeaturedProjects } from "@/features/projects/selectors";
 import { profile } from "@/content/profile";
 import { getPublishedPosts } from "@/features/blog/posts";
 import { PostList } from "@/features/blog/PostList";
+import { OrbitMark } from "@/components/ui/OrbitMark";
 export default async function Home() {
   const latestPosts = (await getPublishedPosts()).slice(0, 3);
   return (
     <>
       <Container>
         <section className="hero" aria-labelledby="hero-title">
+          <OrbitMark label="CHENNAI / INDIA" className="hero-orbit" />
           <div className="hero-top">
             <p className="eyebrow">
               <span className="status-dot" /> SOFTWARE DEVELOPER
@@ -81,7 +83,7 @@ export default async function Home() {
           className="about-teaser section-space"
           aria-labelledby="about-heading"
         >
-          <div className="portrait-wrap">
+          <div className="portrait-wrap personal-portrait">
             <Image
               src="/images/tharun.webp"
               width={760}
@@ -89,7 +91,7 @@ export default async function Home() {
               alt="Tharun Kumarr A"
               sizes="(min-width: 768px) 35vw, 100vw"
             />
-            <span className="portrait-caption">A LITTLE ABOUT THE PERSON</span>
+            <span className="portrait-caption">A LITTLE ABOUT THE PERSON · SPACE / DRUMS / FOOTBALL</span>
           </div>
           <div>
             <p className="eyebrow">02 / BEYOND THE CODE</p>
