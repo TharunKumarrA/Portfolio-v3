@@ -11,7 +11,7 @@ export default function Experience() {
   return (
     <Container>
       <div className="page-intro">
-        <h1>Experience</h1>
+        <h1>My <span className="accent">experience.</span></h1>
         <p className="lead">
           From full-stack development and festival platforms to improving
           operational workflows.

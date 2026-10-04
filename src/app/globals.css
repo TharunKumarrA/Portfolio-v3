@@ -1177,3 +1177,9 @@ a:hover { color: var(--accent); }
   .archive-row { gap: 1rem; }
   .about-photo { justify-self: start; }
 }
+
+/* Editorial refinements: expressive headings and restrained visual structure. */
+.page-intro h1 { font-size: clamp(2.5rem, 5vw, 4.2rem); margin-block: .8rem 1.3rem; }
+.intro-links { display: flex; flex-wrap: wrap; gap: 1.5rem; margin-top: 1.5rem; }
+
+/* Compact About and résumé layouts. */
