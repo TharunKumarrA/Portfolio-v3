@@ -1066,6 +1066,8 @@ img {
 .directory-accent {
   color: var(--accent);
   margin-left: .55rem;
+  font-size: .5em;
+  vertical-align: .15em;
 }
 .directory-header nav,
 .directory-footer nav {
