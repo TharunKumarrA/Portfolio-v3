@@ -3,12 +3,12 @@ export default {
   theme: {
     extend: {
       colors: {
-        canvas: "#141414",
-        surface: "#1c1c1c",
-        ink: "#f4f4f0",
-        muted: "#b0b0aa",
-        accent: "#f2725d",
-        line: "#383836",
+        canvas: "#171313",
+        surface: "#241b1a",
+        ink: "#f3ece1",
+        muted: "#c2b1a0",
+        accent: "#d79a48",
+        line: "#493633",
       },
       fontFamily: {
         heading: ["var(--font-space-mono)", "monospace"],

@@ -1,0 +1,112 @@
+---
+title: "SustAIn: Making AI Usage More Aware and Accountable"
+description: "By Tharun and Thanus Made for Google on Campus Solution Challenge 2025 #Hack2Skill Tag: Hack2skill"
+publishedAt: "2025-05-14"
+tags: []
+draft: false
+---
+
+By Tharun and Thanus
+Made for Google on Campus Solution Challenge 2025 #Hack2Skill
+ Tag: [Hack2skill](https://medium.com/u/db028834c033)
+
+## The Problem We Noticed
+
+Generative AI is everywhere. Whether it’s ChatGPT, Gemini, or other tools, people are using them daily — often without a second thought. And while there’s been a lot of focus on what these models can do, there’s very little awareness about what it *costs* to run them — not in money, but in energy, water, and carbon.
+
+Every time we prompt an AI model, we’re consuming resources. But no platform tells us how much. It’s invisible. We realized this was a problem. People can’t make responsible choices if they aren’t even aware of the impact their usage has.
+
+That’s what pushed us to build SustAIn.
+
+SustAIn is a Chrome extension that overlays on top of generative AI platforms and shows users the real-time environmental footprint of each AI prompt — energy consumption, CO₂ emissions, and water usage. It also explains what these numbers mean, in a way that’s understandable and relevant.
+
+## Technologies We Used
+
+This project required us to work across the full stack, and even experiment with some AI models. Here’s how we structured it:
+
+### Frontend (Chrome Extension)
+
+- Built using React, TypeScript, and Tailwind CSS.
+
+- Displays real-time footprint metrics with a minimal and non-intrusive UI.
+
+### Backend API
+
+- Node.js and Express.
+
+- Integrates with APIs like Electricity Maps to fetch live emissions data, IP-API to convert IP addresses to geolocations and Time-API for finding the time and date at any location.
+
+- Includes a caching system and a scaling logic based on model type, region, and prompt duration.
+
+### AI and Data Layer
+
+- Conducted model benchmarking to understand resource usage patterns.
+
+- Started building a query classification model to adjust footprint estimates based on prompt type (e.g., coding prompt vs. casual chat).
+
+### Documentation
+
+- Maintained clear, public documentation for every part of the system to ensure transparency and collaboration.
+
+## Challenges We Faced
+
+Building this wasn’t easy. Some of the challenges were expected, others were completely new territory.
+
+### 1. No Readily Available Dataset for Query Classification
+
+We wanted to train a model that could classify prompts based on complexity or purpose. Since there was no ready-made dataset for this, we had to get creative. We generated a synthetic dataset by scaling up from a small set of seed prompts, manually labelled a portion of it ourselves, and also circulated forms within our social circles to crowdsource more labelled examples. It wasn’t quick — but it gave us a dataset that was customized to our needs, and helped us understand our classifier’s direction more clearly.
+
+### 2. Designing a Prompt-Type Classifier
+
+We didn’t just need a dataset — we needed to figure out how to build a model that could run lightweight inference without affecting browser performance. It had to be fast, private, and accurate enough to classify prompts into meaningful categories. Balancing these trade-offs took time and multiple iterations.
+
+### 3. Understanding How AI Platforms Process Prompts
+
+Every platform has a different way of sending and displaying responses. ChatGPT streams tokens. Gemini responds all at once. We had to reverse-engineer how each site sends and renders data, track DOM updates or network calls, and hook our logic into it without breaking the UI.
+
+### 4. Estimating Resource Usage in Real Time
+
+There’s no official API from OpenAI or Google that tells you how much CO₂ a prompt uses. We had to piece this together from academic research, model benchmarks, regional energy grid data, and our own scaling formulas. The logic needed to work fast and give reliable approximations for users.
+
+### 5. Making Complex Metrics Easy to Understand
+
+It’s one thing to show that a prompt emitted 150 grams of CO₂. But what does that mean for the average user? We had to rethink how we presented data — through analogies, simplified units, and short explanations. Our goal was to inform, not overwhelm.
+
+## Vision and Long-Term Impact
+
+SustAIn is not just a side project. It’s a conversation starter — and we hope it becomes a mindset shift.
+
+The long-term vision is to normalize visibility into AI’s environmental cost. We want developers to build responsibly, companies to report prompt-level emissions, and users to develop a more conscious relationship with AI tools.
+
+We plan to:
+
+- Improve our classifier model and build a public dataset for prompt classification.
+
+- Launch an API and SDK for developers to integrate real-time sustainability metrics into their own products.
+
+- Partner with AI companies to include these metrics natively.
+
+- Expand the project beyond Chrome to other platforms and workflows.
+
+## What We Learned
+
+This project taught us more than we expected — technically and otherwise.
+
+- Building real-time systems requires a deep understanding across layers — from how prompts are sent to how emissions are measured.
+
+- Open-source development helps you think clearly. Maintaining documentation, modularity, and a clean codebase became second nature.
+
+- The hardest problems are the most rewarding, especially when they connect with something you care about.
+
+- AI sustainability is a topic still in its early days. There’s a lot of room to innovate — and more importantly, to build with responsibility.
+
+## Final Thoughts
+
+This project came from a simple realization: AI isn’t free. Not in compute, not in power, not in water. We’re not against using AI. We just believe people deserve to know what each prompt costs — because only with awareness can we start making responsible choices.
+
+SustAIn is our way of contributing to that shift. It’s still growing, still evolving — but the foundation is clear: make AI usage more transparent, and in doing so, a bit more sustainable.
+
+### **Explore SustAIn:**
+
+GitHub: [https://github.com/SustAIn-GDG](https://github.com/SustAIn-GDG)
+ Chrome Extension: [https://chromewebstore.google.com/detail/sustain/bhjkhbmcamcpeebfobejnhnkghkfhegp?utm_source=item-share-cb](https://chromewebstore.google.com/detail/sustain/bhjkhbmcamcpeebfobejnhnkghkfhegp?utm_source=item-share-cb)

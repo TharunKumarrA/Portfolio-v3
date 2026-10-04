@@ -38,7 +38,7 @@ export const metadata = {
   },
   twitter: { card: "summary" },
 };
-export const viewport = { themeColor: "#141414" };
+export const viewport = { themeColor: "#171313" };
 export default function RootLayout({ children }) {
   return (
     <html lang="en">

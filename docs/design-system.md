@@ -6,7 +6,7 @@ A restrained technical journal: charcoal surfaces, coral accents, monospaced met
 
 ## Foundations
 
-Tokens live in `src/app/globals.css` and the Tailwind extension. Canvas #141414; surface #1c1c1c; primary text #f4f4f0; muted text #b0b0aa; accent #f2725d; borders #383836. The accent is brighter than v2 to improve visibility on dark backgrounds. Rubik is the default body font; Space Mono is used for branding, project names, and metadata. Local font assets use swap rendering and eliminate font-download dependencies during build.
+Tokens live in `src/app/globals.css` and the Tailwind extension. Canvas #171313; surface #241b1a; primary text #f3ece1; muted text #c2b1a0; accent #d79a48; borders #493633. The burnished gold accent, oxblood-leaning surfaces, and parchment text form a restrained Fire Nation-inspired palette while retaining strong contrast on dark backgrounds. Rubik is the default body font; Space Mono is used for branding, project names, and metadata. Local font assets use swap rendering and eliminate font-download dependencies during build.
 
 Container: 1240px maximum with fluid gutters. Sections use normal grid/flex layout. Main body is at least 16px; secondary metadata is 12–14px. Interactive targets have clear focus outlines. Essential navigation wraps at 320px.
 
