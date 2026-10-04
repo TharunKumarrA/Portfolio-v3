@@ -29,7 +29,7 @@ export default async function Home() {
     <Container className="directory">
       <section className="directory-intro" aria-label="Introduction">
         <p className="eyebrow">Software & stories</p>
-        <p className="directory-statement">I build software.<br /><span className="accent">I write about life.</span></p>
+        <p className="directory-statement">I build software.<br /><span className="accent">And sometimes I write.</span></p>
         <p className="muted">Web applications, automation tools, and notes from the journey.<br />Currently an Analyst at Goldman Sachs.</p>
         <div className="intro-links"><Link className="text-link" href="/about">More about me ↗</Link><Link className="text-link" href="/experience">View experience →</Link></div>
       </section>
