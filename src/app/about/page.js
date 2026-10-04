@@ -2,6 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { Container } from "@/components/layout/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { MinecraftAccent } from "@/components/ui/MinecraftAccent";
+import { PlayerNameplate } from "@/components/ui/PlayerNameplate";
 import { profile } from "@/content/profile";
 import { pageMetadata } from "@/lib/site";
 export const metadata = pageMetadata(
@@ -13,7 +15,7 @@ export default function About() {
   return (
     <Container className="about-refined">
       <div className="page-intro">
-        <p className="eyebrow">About me</p>
+        <p className="eyebrow eyebrow-with-accent"><MinecraftAccent icon="map" decorative />About me</p>
         <h1>Vanakam! <span className="accent">I’m Tharun.</span></h1>
         <p className="lead">A software developer with a curious mind, based in India.</p>
       </div>
@@ -36,6 +38,7 @@ export default function About() {
           </a>
         </div>
         <div className="portrait-frame">
+        <PlayerNameplate displayName="Tharun" />
         <Image
           className="about-photo"
           src="/images/tharun.webp"
@@ -50,6 +53,7 @@ export default function About() {
         <SectionHeading
           title="Tools I use"
           id="skills-heading"
+          icon="crafting"
         />
         <div className="skills-grid">
           {profile.skills.map((s) => (
@@ -68,6 +72,7 @@ export default function About() {
         <SectionHeading
           title="Education"
           id="education-heading"
+          icon="book"
         />
         {profile.education.map((e) => (
           <div className="education-row" key={e.school}>
@@ -83,6 +88,7 @@ export default function About() {
         <SectionHeading
           title="Outside work"
           id="interests-heading"
+          icon="compass"
         />
         <ul className="interests-list">
           {profile.interests.map((i) => (

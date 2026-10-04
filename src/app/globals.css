@@ -83,6 +83,38 @@ img {
   text-transform: uppercase;
   color: var(--muted);
 }
+.pixel-label,
+.eyebrow-with-accent,
+.section-heading-icon + h2,
+.directory-columns h2 {
+  font-family: var(--font-pixelify), var(--font-space-mono), monospace;
+}
+.eyebrow-with-accent {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.minecraft-accent {
+  display: inline-grid;
+  place-items: center;
+  width: 1.15rem;
+  height: 1.15rem;
+  flex: 0 0 auto;
+  color: var(--accent);
+  vertical-align: -0.16em;
+  transition: transform 140ms steps(2, end), filter 140ms steps(2, end);
+}
+.minecraft-accent svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+a:hover .minecraft-accent,
+a:focus-visible .minecraft-accent,
+.section-heading:hover .section-heading-icon {
+  transform: translate(2px, -2px);
+  filter: drop-shadow(2px 2px 0 var(--line));
+}
 .text-link {
   display: inline-flex;
   align-items: center;
@@ -188,6 +220,11 @@ img {
 .nav-list a:hover,
 .nav-list a[aria-current] {
   color: var(--ink);
+}
+.nav-list a:hover,
+.nav-list a:focus-visible {
+  font-family: var(--font-pixelify), var(--font-space-mono), monospace;
+  text-shadow: 1px 1px 0 var(--line);
 }
 .nav-list a[aria-current] {
   text-decoration: underline;
@@ -310,6 +347,9 @@ img {
 .section-heading h2 {
   font-size: clamp(1.8rem, 3.5vw, 2.7rem);
   margin-top: 0.9rem;
+}
+.section-heading-icon {
+  margin-bottom: 0.65rem;
 }
 .selected-projects {
   display: grid;
@@ -1062,6 +1102,7 @@ img {
 .directory-header h1 {
   font-size: 1.5rem;
   letter-spacing: -.035em;
+  font-family: var(--font-pixelify), var(--font-space-mono), monospace;
 }
 .directory-accent {
   color: var(--accent);
@@ -1130,7 +1171,7 @@ body::before {
   mask-image: linear-gradient(to bottom, #000, rgba(0,0,0,.3));
 }
 .container-shell { max-width: 1040px; }
-.directory-name { font-size: 1.5rem; letter-spacing: -.035em; line-height: 1.2; }
+.directory-name { font-family: var(--font-pixelify), var(--font-space-mono), monospace; font-size: 1.5rem; letter-spacing: -.035em; line-height: 1.2; }
 .directory-header .nav-list { gap: 1.5rem; }
 .directory-header .nav-list a { padding: 0; color: var(--muted); }
 .directory-header .nav-list a:hover { color: var(--accent); }
@@ -1190,6 +1231,7 @@ a:hover { color: var(--accent); }
 .directory-columns { gap: 3rem; padding-top: 2rem; border-top: 1px solid var(--line); }
 .directory-columns section + section { padding-left: 3rem; border-left: 1px solid var(--line); }
 .directory-columns h2 { font-size: 1.5rem; }
+.directory-columns h2 .minecraft-accent { margin-right: 0.45rem; }
 .directory-list li + li { padding-top: 1.3rem; margin-top: 1.3rem; border-top: 1px solid rgba(215,154,72,.12); }
 .writing-years { display: flex; flex-wrap: wrap; gap: 1.5rem; margin-bottom: 2rem; }
 .writing-years a { font-family: var(--font-space-mono), monospace; font-size: .9rem; border-bottom: 1px solid var(--line); padding-block: .5rem; }
@@ -1236,8 +1278,32 @@ a:hover { color: var(--accent); }
 .about-refined .skill-group h3 { color: var(--ink); font-size: 1.05rem; margin-bottom: .5rem; }
 .about-refined .education-row { padding-block: 1rem; }
 .about-refined .education-row h3 { font-size: 1.1rem; }
-.portrait-frame { position: relative; padding: 10px; border: 1px solid var(--line); background: var(--surface); box-shadow: 10px 10px 0 rgba(73,54,51,.35); overflow: hidden; }
+.portrait-frame { position: relative; padding: 10px; padding-top: 28px; border: 1px solid var(--line); background: var(--surface); box-shadow: 10px 10px 0 rgba(73,54,51,.35); overflow: visible; }
 .portrait-frame .about-photo { display: block; width: 100%; max-width: none; filter: none; }
+.player-nameplate {
+  position: absolute;
+  z-index: 1;
+  top: -1px;
+  left: 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  min-height: 25px;
+  padding: 0.15rem 0.55rem;
+  border: 1px solid #d7d7d7;
+  background: #777;
+  color: #fff;
+  font-family: var(--font-pixelify), var(--font-space-mono), monospace;
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+  box-shadow: 3px 3px 0 #252525;
+}
+.player-status {
+  width: 6px;
+  height: 6px;
+  background: var(--accent);
+  box-shadow: 1px 1px 0 #4c3217;
+}
 .resume-simple { max-width: 850px; }
 .resume-simple .page-intro { padding-block: 3rem 2rem; }
 .resume-simple .page-intro h1 { font-size: 2.5rem; }

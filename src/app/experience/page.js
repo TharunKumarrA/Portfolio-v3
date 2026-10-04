@@ -2,6 +2,7 @@ import { Container } from "@/components/layout/Container";
 import { ExperienceList } from "@/features/experience/ExperienceList";
 import { experiences } from "@/content/experiences";
 import { pageMetadata } from "@/lib/site";
+import { MinecraftAccent } from "@/components/ui/MinecraftAccent";
 export const metadata = pageMetadata(
   "Experience",
   "Professional development, practical automation, and technical leadership.",
@@ -11,6 +12,7 @@ export default function Experience() {
   return (
     <Container>
       <div className="page-intro">
+        <p className="eyebrow eyebrow-with-accent"><MinecraftAccent icon="compass" decorative />Experience</p>
         <h1>My <span className="accent">experience.</span></h1>
         <p className="lead">
           From full-stack development and festival platforms to improving

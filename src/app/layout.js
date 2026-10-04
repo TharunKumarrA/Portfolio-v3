@@ -19,6 +19,14 @@ const rubik = localFont({
   variable: "--font-rubik",
   display: "swap",
 });
+const pixel = localFont({
+  src: [
+    { path: "../../public/fonts/pixelify-sans-regular.ttf", weight: "400" },
+    { path: "../../public/fonts/pixelify-sans-semibold.ttf", weight: "600" },
+  ],
+  variable: "--font-pixelify",
+  display: "swap",
+});
 const origin = getSiteOrigin();
 export const metadata = {
   ...(origin ? { metadataBase: new URL(origin) } : {}),
@@ -42,7 +50,7 @@ export const viewport = { themeColor: "#171313" };
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${mono.variable} ${rubik.variable} font-body`}>
+      <body className={`${mono.variable} ${rubik.variable} ${pixel.variable} font-body`}>
         <a className="skip-link" href="#main">
           Skip to content
         </a>

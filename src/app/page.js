@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Container } from "@/components/layout/Container";
 import { getFeaturedProjects } from "@/features/projects/selectors";
 import { getPublishedPosts } from "@/features/blog/posts";
+import { MinecraftAccent } from "@/components/ui/MinecraftAccent";
 
 const projectDescriptions = {
   sustain: "AI resource-usage estimates",
@@ -28,14 +29,14 @@ export default async function Home() {
   return (
     <Container className="directory">
       <section className="directory-intro" aria-label="Introduction">
-        <p className="eyebrow">Software & stories</p>
+        <p className="eyebrow pixel-label">Software & stories</p>
         <p className="directory-statement">I build software.<br /><span className="accent">And sometimes I write.</span></p>
         <p className="muted">Web applications, automation tools, and notes from the journey.<br />Currently an Analyst at Goldman Sachs.</p>
         <div className="intro-links"><Link className="text-link" href="/about">More about me ↗</Link><Link className="text-link" href="/experience">View experience →</Link></div>
       </section>
       <div className="directory-columns">
         <section aria-labelledby="built-heading">
-          <h2 id="built-heading">Things I’ve <span className="accent">built</span></h2>
+          <h2 id="built-heading"><MinecraftAccent icon="crafting" decorative />Things I’ve <span className="accent">built</span></h2>
           <ul className="directory-list">
             {getFeaturedProjects().map((project) => (
               <li key={project.slug}>
@@ -47,7 +48,7 @@ export default async function Home() {
           <Link className="directory-more" href="/projects">All projects →</Link>
         </section>
         <section aria-labelledby="written-heading">
-          <h2 id="written-heading">Things I’ve <span className="accent">written</span></h2>
+          <h2 id="written-heading"><MinecraftAccent icon="book" decorative />Things I’ve <span className="accent">written</span></h2>
           <ul className="directory-list">
             {selectedPosts.map((post) => (
               <li key={post.slug}>
