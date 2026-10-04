@@ -136,7 +136,7 @@ export const projects = [
     category: "Full-stack application",
     year: "2025",
     technologies: ["Next.js", "Tailwind CSS", "Node.js"],
-    featuredOrder: 3,
+    featuredOrder: null,
     image: {
       src: "/projects/amritotsavam-2025.webp",
       alt: "Amritotsavam 2025 application interface",
@@ -261,7 +261,7 @@ export const projects = [
     category: "Interactive visualization",
     year: "2024",
     technologies: ["React", "PlotlyJS", "Gemini API", "MUI"],
-    featuredOrder: null,
+    featuredOrder: 3,
     image: {
       src: "/projects/molecule-visualizer.webp",
       alt: "Molecule Visualizer application interface",

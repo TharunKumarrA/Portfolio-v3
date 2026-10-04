@@ -6,7 +6,7 @@ import { getPublishedPosts } from "@/features/blog/posts";
 const projectDescriptions = {
   sustain: "AI resource-usage estimates",
   "pragati-2025": "Event registration and payments",
-  "amritotsavam-2025": "Festival registration and organizer tools",
+  "molecule-visualizer": "Interactive 3D molecular geometry",
 };
 const writingSlugs = [
   "from-the-other-side",
