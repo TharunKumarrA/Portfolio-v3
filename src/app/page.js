@@ -28,12 +28,14 @@ export default async function Home() {
   return (
     <Container className="directory">
       <section className="directory-intro" aria-label="Introduction">
-        <p>I build software and write about life.</p>
-        <p className="muted">Currently at Goldman Sachs.</p>
+        <p className="eyebrow">Software & stories</p>
+        <p className="directory-statement">I build software.<br /><span className="accent">I write about life.</span></p>
+        <p className="muted">Web applications, automation tools, and notes from the journey.<br />Currently an Analyst at Goldman Sachs.</p>
+        <div className="intro-links"><Link className="text-link" href="/about">More about me ↗</Link><Link className="text-link" href="/experience">View experience →</Link></div>
       </section>
       <div className="directory-columns">
         <section aria-labelledby="built-heading">
-          <h2 id="built-heading">Things I’ve built</h2>
+          <h2 id="built-heading">Things I’ve <span className="accent">built</span></h2>
           <ul className="directory-list">
             {getFeaturedProjects().map((project) => (
               <li key={project.slug}>
@@ -45,7 +47,7 @@ export default async function Home() {
           <Link className="directory-more" href="/projects">All projects →</Link>
         </section>
         <section aria-labelledby="written-heading">
-          <h2 id="written-heading">Things I’ve written</h2>
+          <h2 id="written-heading">Things I’ve <span className="accent">written</span></h2>
           <ul className="directory-list">
             {selectedPosts.map((post) => (
               <li key={post.slug}>

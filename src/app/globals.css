@@ -1180,7 +1180,15 @@ a:hover { color: var(--accent); }
 
 /* Editorial refinements: expressive headings and restrained visual structure. */
 .page-intro h1 { font-size: clamp(2.5rem, 5vw, 4.2rem); margin-block: .8rem 1.3rem; }
+.directory-intro { padding-block: 4.5rem 3.5rem; }
+.directory-intro .eyebrow { font-size: .72rem; letter-spacing: .1em; }
+.directory-intro .directory-statement { font-size: clamp(2.6rem, 5vw, 4.4rem); line-height: 1.12; letter-spacing: -.055em; margin-block: 1.3rem; }
+.directory-intro .muted { max-width: 580px; }
 .intro-links { display: flex; flex-wrap: wrap; gap: 1.5rem; margin-top: 1.5rem; }
+.directory-columns { gap: 3rem; padding-top: 2rem; border-top: 1px solid var(--line); }
+.directory-columns section + section { padding-left: 3rem; border-left: 1px solid var(--line); }
+.directory-columns h2 { font-size: 1.5rem; }
+.directory-list li + li { padding-top: 1.3rem; margin-top: 1.3rem; border-top: 1px solid rgba(215,154,72,.12); }
 .writing-years { display: flex; flex-wrap: wrap; gap: 1.5rem; margin-bottom: 2rem; }
 .writing-years a { font-family: var(--font-space-mono), monospace; font-size: .9rem; border-bottom: 1px solid var(--line); padding-block: .5rem; }
 .writing-years a:hover { border-color: var(--accent); }
@@ -1188,5 +1196,10 @@ a:hover { color: var(--accent); }
 .writing-year > h2 { color: var(--accent); }
 .post-list > li + li { border-color: rgba(215,154,72,.12); }
 .post-list .tag-list li { font-size: .75rem; }
+@media (max-width: 760px) {
+  .directory-intro { padding-block: 3rem; }
+  .directory-columns section + section { padding-left: 0; border-left: 0; border-top: 1px solid var(--line); padding-top: 2rem; }
+}
+.directory-intro p.eyebrow { font-size: .72rem; line-height: 1.7; letter-spacing: .1em; }
 
 /* Compact About and résumé layouts. */
