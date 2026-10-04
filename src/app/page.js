@@ -3,6 +3,7 @@ import { Container } from "@/components/layout/Container";
 import { getFeaturedProjects } from "@/features/projects/selectors";
 import { getPublishedPosts } from "@/features/blog/posts";
 import { MinecraftAccent } from "@/components/ui/MinecraftAccent";
+import { HeroTypefaceWord } from "@/components/ui/HeroTypefaceWord";
 
 const projectDescriptions = {
   sustain: "AI resource-use estimates for sustainable software decisions",
@@ -30,7 +31,11 @@ export default async function Home() {
     <Container className="directory">
       <section className="directory-intro" aria-label="Introduction">
         <p className="eyebrow pixel-label">Software & stories</p>
-        <p className="directory-statement">I build software.<br /><span className="accent">And sometimes I write.</span></p>
+        <p className="directory-statement">
+          I build <HeroTypefaceWord word="software." />
+          <br />
+          <span className="accent">And sometimes I <HeroTypefaceWord word="write." delay={3700} /></span>
+        </p>
         <p className="muted">Web applications, automation tools, and notes from the journey.<br />Currently an Analyst at Goldman Sachs.</p>
         <div className="intro-links">
           <Link className="text-link hero-work-cta" href="/experience">View experience →</Link>
