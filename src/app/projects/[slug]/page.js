@@ -39,7 +39,7 @@ export default async function ProjectPage({ params }) {
         <p className="eyebrow">
           {p.category} / {p.year}
         </p>
-        <h1>{p.title}</h1>
+        <h1>{p.title}<span className="accent">.</span></h1>
         <p className="lead">{p.summary}</p>
       </div>
       <dl className="case-facts">

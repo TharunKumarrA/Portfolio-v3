@@ -1196,9 +1196,18 @@ a:hover { color: var(--accent); }
 .writing-year > h2 { color: var(--accent); }
 .post-list > li + li { border-color: rgba(215,154,72,.12); }
 .post-list .tag-list li { font-size: .75rem; }
+.refined-projects { gap: 3rem; }
+.refined-projects .project-card { background: transparent; border: 0; grid-template-columns: minmax(0,1.15fr) minmax(0,1fr); gap: 2rem; align-items: center; padding-bottom: 3rem; border-bottom: 1px solid var(--line); }
+.refined-projects .project-image-link { min-height: 0; padding: 1.25rem; background: rgba(73,54,51,.35); }
+.refined-projects .project-card-copy { padding: 0; }
+.refined-projects .project-card-copy h3 { font-size: 2rem; }
+.refined-projects .project-image { box-shadow: 0 12px 24px #0003; }
+.refined-projects .image-arrow { width: 32px; height: 32px; font-size: 1rem; background: var(--canvas); color: var(--accent); }
 @media (max-width: 760px) {
   .directory-intro { padding-block: 3rem; }
   .directory-columns section + section { padding-left: 0; border-left: 0; border-top: 1px solid var(--line); padding-top: 2rem; }
+  .refined-projects .project-card { grid-template-columns: minmax(0,1fr); gap: 1.5rem; padding-bottom: 2rem; }
+  .refined-projects .project-image-link { padding: 1rem; }
 }
 .directory-intro p.eyebrow { font-size: .72rem; line-height: 1.7; letter-spacing: .1em; }
 
