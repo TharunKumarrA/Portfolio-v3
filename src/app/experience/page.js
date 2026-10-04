@@ -11,12 +11,7 @@ export default function Experience() {
   return (
     <Container>
       <div className="page-intro">
-        <p className="eyebrow">EXPERIENCE / THE JOURNEY</p>
-        <h1>
-          Different teams.
-          <br />
-          <span className="accent">A shared drive to build.</span>
-        </h1>
+        <h1>Experience</h1>
         <p className="lead">
           From full-stack development and festival platforms to improving
           operational workflows.

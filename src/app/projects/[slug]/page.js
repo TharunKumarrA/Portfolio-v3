@@ -39,11 +39,7 @@ export default async function ProjectPage({ params }) {
         <p className="eyebrow">
           {p.category} / {p.year}
         </p>
-        <h1>
-          {p.title}
-          <br />
-          <span className="accent">{p.headline}</span>
-        </h1>
+        <h1>{p.title}</h1>
         <p className="lead">{p.summary}</p>
       </div>
       <dl className="case-facts">
@@ -79,7 +75,7 @@ export default async function ProjectPage({ params }) {
       )}
       <div className="case-layout">
         <aside className="case-aside">
-          <p className="eyebrow">IN THIS PROJECT</p>
+          <p className="case-nav-title">In this project</p>
           <nav aria-label="Case study sections">
             <a href="#context">The context</a>
             <a href="#responsibility">My responsibility</a>
@@ -145,7 +141,7 @@ export default async function ProjectPage({ params }) {
         </div>
       </div>
       <div className="case-next">
-        <span className="eyebrow">KEEP EXPLORING</span>
+        <span className="muted">Next project</span>
         <Link className="text-link" href={`/projects/${next.slug}`}>
           {next.title}
           <FiArrowUpRight aria-hidden="true" />

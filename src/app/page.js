@@ -1,124 +1,64 @@
-import Image from "next/image";
 import Link from "next/link";
-import { FiArrowDown, FiArrowUpRight } from "react-icons/fi";
 import { Container } from "@/components/layout/Container";
-import { SectionHeading } from "@/components/ui/SectionHeading";
-import { InteractiveAccent } from "@/components/ui/InteractiveAccent";
-import { ProjectCard } from "@/features/projects/ProjectCard";
 import { getFeaturedProjects } from "@/features/projects/selectors";
-import { profile } from "@/content/profile";
 import { getPublishedPosts } from "@/features/blog/posts";
-import { PostList } from "@/features/blog/PostList";
+
+const projectDescriptions = {
+  sustain: "AI resource-usage estimates",
+  "pragati-2025": "Event registration and payments",
+  "amritotsavam-2025": "Festival registration and organizer tools",
+};
+const writingSlugs = [
+  "from-the-other-side",
+  "yours-not-mine",
+  "three-things-cannot-be-long-hidden",
+];
+const monthYear = new Intl.DateTimeFormat("en-US", {
+  month: "short",
+  year: "numeric",
+  timeZone: "UTC",
+});
+
 export default async function Home() {
-  const latestPosts = (await getPublishedPosts()).slice(0, 3);
+  const posts = await getPublishedPosts();
+  const selectedPosts = writingSlugs
+    .map((slug) => posts.find((post) => post.slug === slug))
+    .filter(Boolean);
+
   return (
-    <>
-      <Container>
-        <section className="hero" aria-labelledby="hero-title">
-          <div className="hero-top">
-            <p className="eyebrow">
-              <span className="status-dot" /> SOFTWARE DEVELOPER
-            </p>
-            <p className="hero-location">INDIA / PORTFOLIO 03</p>
-          </div>
-          <div className="hero-heading">
-            <h1 id="hero-title">
-              Thoughtful interfaces.
-              <br />
-              <span className="accent">Dependable systems.</span>
-            </h1>
-            <InteractiveAccent />
-          </div>
-          <div className="hero-bottom">
-            <p>
-              I’m <strong>Tharun Kumarr A.</strong>
-              <br />
-              {profile.introduction}
-            </p>
-            <div className="hero-actions">
-              <Link className="button button-primary" href="/projects">
-                Explore my work <FiArrowUpRight aria-hidden="true" />
-              </Link>
-              <Link className="text-link" href="/resume">
-                View résumé <FiArrowUpRight aria-hidden="true" />
-              </Link>
-            </div>
-          </div>
-          <div className="hero-footnote">
-            <span>Currently · Analyst at Goldman Sachs</span>
-            <a href="#selected-work">
-              SCROLL TO EXPLORE <FiArrowDown aria-hidden="true" />
-            </a>
-          </div>
-        </section>
-        <section className="section-space" aria-labelledby="writing-heading">
-          <SectionHeading number="WRITING" title="Notes from the journey." id="writing-heading">
-            <Link className="text-link" href="/writing">All writing →</Link>
-          </SectionHeading>
-          <PostList posts={latestPosts} />
-        </section>
-        <section
-          id="selected-work"
-          className="section-space"
-          aria-labelledby="work-heading"
-        >
-          <SectionHeading
-            number="01 / SELECTED WORK"
-            title="Ideas, put into practice."
-            id="work-heading"
-          >
-            <Link className="text-link" href="/projects">
-              All projects <FiArrowUpRight aria-hidden="true" />
-            </Link>
-          </SectionHeading>
-          <div className="selected-projects">
-            {getFeaturedProjects().map((p, index) => (
-              <ProjectCard key={p.slug} project={p} index={index} />
+    <Container className="directory">
+      <section className="directory-intro" aria-label="Introduction">
+        <p>I build software and write about life.</p>
+        <p className="muted">Currently at Goldman Sachs.</p>
+      </section>
+      <div className="directory-columns">
+        <section aria-labelledby="built-heading">
+          <h2 id="built-heading">Things I’ve built</h2>
+          <ul className="directory-list">
+            {getFeaturedProjects().map((project) => (
+              <li key={project.slug}>
+                <h3><Link href={`/projects/${project.slug}`}>{project.title}</Link></h3>
+                <p>{projectDescriptions[project.slug] || project.summary}</p>
+              </li>
             ))}
-          </div>
+          </ul>
+          <Link className="directory-more" href="/projects">All projects →</Link>
         </section>
-        <section
-          className="about-teaser section-space"
-          aria-labelledby="about-heading"
-        >
-          <div className="portrait-wrap">
-            <Image
-              src="/images/tharun.webp"
-              width={760}
-              height={760}
-              alt="Tharun Kumarr A"
-              sizes="(min-width: 768px) 35vw, 100vw"
-            />
-            <span className="portrait-caption">A LITTLE ABOUT THE PERSON</span>
-          </div>
-          <div>
-            <p className="eyebrow">02 / BEYOND THE CODE</p>
-            <h2 id="about-heading">
-              Curious by nature.
-              <br />A builder by choice.
-            </h2>
-            <p className="muted">{profile.about}</p>
-            <p className="muted">
-              Outside development: space, drums, football, and a good book.
-            </p>
-            <Link className="text-link" href="/about">
-              More about me <FiArrowUpRight aria-hidden="true" />
-            </Link>
-          </div>
+        <section aria-labelledby="written-heading">
+          <h2 id="written-heading">Things I’ve written</h2>
+          <ul className="directory-list">
+            {selectedPosts.map((post) => (
+              <li key={post.slug}>
+                <h3><Link href={`/writing/${post.slug}`}>{post.title}</Link></h3>
+                <time dateTime={post.publishedAt}>
+                  {monthYear.format(new Date(`${post.publishedAt}T00:00:00Z`))}
+                </time>
+              </li>
+            ))}
+          </ul>
+          <Link className="directory-more" href="/writing">All writing →</Link>
         </section>
-        <section className="current-strip" aria-labelledby="now-heading">
-          <div>
-            <p className="eyebrow">03 / RIGHT NOW</p>
-            <h2 id="now-heading">Building tools. Improving workflows.</h2>
-          </div>
-          <div>
-            <p>{profile.now}</p>
-            <Link className="text-link" href="/experience">
-              Explore my experience <FiArrowUpRight aria-hidden="true" />
-            </Link>
-          </div>
-        </section>
-      </Container>
-    </>
+      </div>
+    </Container>
   );
 }

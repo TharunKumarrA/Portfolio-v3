@@ -23,16 +23,16 @@ const origin = getSiteOrigin();
 export const metadata = {
   ...(origin ? { metadataBase: new URL(origin) } : {}),
   title: {
-    default: "Tharun Kumarr A — Software Developer",
-    template: "%s · Tharun Kumarr A",
+    default: "Tharun Kumar A — Software Developer",
+    template: "%s · Tharun Kumar A",
   },
   description:
-    "Full-stack applications, thoughtful interfaces, and practical automation. Explore the work and experience of Tharun Kumarr A.",
+    "Full-stack applications, thoughtful interfaces, and practical automation. Explore the work and experience of Tharun Kumar A.",
   ...(origin ? { alternates: { types: { "application/rss+xml": new URL("/rss.xml", origin).href } } } : {}),
-  authors: [{ name: "Tharun Kumarr A" }],
+  authors: [{ name: "Tharun Kumar A" }],
   openGraph: {
     type: "website",
-    title: "Tharun Kumarr A — Software Developer",
+    title: "Tharun Kumar A — Software Developer",
     description:
       "Selected work in full-stack development, AI tools, and workflow automation.",
   },

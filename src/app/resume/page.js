@@ -5,19 +5,14 @@ import { profile } from "@/content/profile";
 import { pageMetadata } from "@/lib/site";
 export const metadata = pageMetadata(
   "Résumé",
-  "Experience, education, and a downloadable résumé for Tharun Kumarr A.",
+  "Experience, education, and a downloadable résumé for Tharun Kumar A.",
   "/resume",
 );
 export default function Resume() {
   return (
     <Container>
       <div className="page-intro">
-        <p className="eyebrow">RÉSUMÉ / AT A GLANCE</p>
-        <h1>
-          Experience,
-          <br />
-          <span className="accent">in focus.</span>
-        </h1>
+        <h1>Résumé</h1>
         <p className="lead">{profile.introduction}</p>
         <div className="resume-actions">
           <a
@@ -62,7 +57,7 @@ export default function Resume() {
       <iframe
         className="resume-frame"
         src="/resume.pdf"
-        title="Tharun Kumarr A résumé — April 2025"
+        title="Tharun Kumar A résumé — April 2025"
         loading="lazy"
       />
     </Container>

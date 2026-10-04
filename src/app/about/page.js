@@ -5,19 +5,14 @@ import { profile } from "@/content/profile";
 import { pageMetadata } from "@/lib/site";
 export const metadata = pageMetadata(
   "About",
-  "Meet Tharun Kumarr A: software developer, curious learner, and builder.",
+  "Meet Tharun Kumar A: software developer, curious learner, and builder.",
   "/about",
 );
 export default function About() {
   return (
     <Container>
       <div className="page-intro">
-        <p className="eyebrow">ABOUT / A LITTLE MORE HUMAN</p>
-        <h1>
-          Vanakam.
-          <br />
-          <span className="accent">I’m Tharun.</span>
-        </h1>
+        <h1>About me</h1>
       </div>
       <div className="about-page">
         <div className="about-copy">
@@ -39,7 +34,7 @@ export default function About() {
         <Image
           className="about-photo"
           src="/images/tharun.webp"
-          alt="Tharun Kumarr A"
+          alt="Tharun Kumar A"
           width={760}
           height={760}
           sizes="(min-width: 768px) 35vw, 100vw"
@@ -47,8 +42,7 @@ export default function About() {
       </div>
       <section className="section-space" aria-labelledby="skills-heading">
         <SectionHeading
-          number="MY TOOLKIT"
-          title="Tools follow the problem."
+          title="Tools I use"
           id="skills-heading"
         />
         <div className="skills-grid">
@@ -66,8 +60,7 @@ export default function About() {
       </section>
       <section className="section-space" aria-labelledby="education-heading">
         <SectionHeading
-          number="FOUNDATIONS"
-          title="Education."
+          title="Education"
           id="education-heading"
         />
         {profile.education.map((e) => (
@@ -82,8 +75,7 @@ export default function About() {
       </section>
       <section className="section-space" aria-labelledby="interests-heading">
         <SectionHeading
-          number="OFF THE CLOCK"
-          title="Still curious."
+          title="Outside work"
           id="interests-heading"
         />
         <ul className="tag-list">

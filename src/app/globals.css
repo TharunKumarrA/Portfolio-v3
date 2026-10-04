@@ -1045,3 +1045,135 @@ img {
 .hljs-string,.hljs-attr,.hljs-template-tag { color:#d8a86b; }
 .hljs-title,.hljs-number,.hljs-built_in { color:#e07b5b; }
 @media(max-width:600px) { .writing-year { grid-template-columns:minmax(0,1fr); gap:1rem; } .post-header { padding-block:2rem; margin-bottom:2rem; } .post-prose { font-size:1.05rem; } }
+
+/* Text-only homepage directory. */
+.directory-header .container-shell,
+.directory.container-shell,
+.directory-footer .container-shell {
+  max-width: 1040px;
+}
+.directory-header-inner {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 2rem;
+  padding-block: 3.5rem 0;
+}
+.directory-header h1 {
+  font-size: 1.5rem;
+  letter-spacing: -.035em;
+}
+.directory-accent {
+  color: var(--accent);
+  margin-left: .55rem;
+}
+.directory-header nav,
+.directory-footer nav {
+  display: flex;
+  gap: 1.8rem;
+}
+.directory-header a,
+.directory a,
+.directory-footer a {
+  transition: color .2s;
+}
+.directory-header a:hover,
+.directory a:hover,
+.directory-footer a:hover {
+  color: var(--accent);
+}
+.directory-intro { padding-block: 4rem 3.5rem; }
+.directory-intro p:first-child {
+  font-size: clamp(1.5rem, 3vw, 2.1rem);
+  letter-spacing: -.035em;
+  line-height: 1.35;
+}
+.directory-intro .muted { margin-top: .7rem; }
+.directory-columns {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 4rem;
+}
+.directory-columns section { display: flex; flex-direction: column; align-items: start; }
+.directory-columns h2 { font-size: 1.2rem; letter-spacing: -.025em; margin-bottom: 2rem; }
+.directory-list { list-style: none; padding: 0; margin: 0 0 2rem; width: 100%; }
+.directory-list li + li { margin-top: 1.65rem; }
+.directory-list h3 { font-size: 1.35rem; line-height: 1.35; letter-spacing: -.025em; }
+.directory-list p,
+.directory-list time { display: block; color: var(--muted); font-size: .9rem; margin-top: .4rem; }
+.directory-list time { font-size: .8rem; }
+.directory-more { margin-top: auto; font-size: .95rem; }
+.directory-footer { padding-block: 4rem 2.5rem; }
+.directory-footer nav { font-size: .9rem; }
+@media (max-width: 760px) {
+  .directory-header-inner { padding-top: 2rem; gap: 1rem; flex-wrap: wrap; }
+  .directory-header h1 { font-size: 1.3rem; }
+  .directory-header nav { gap: 1.25rem; font-size: .9rem; }
+  .directory-intro { padding-block: 3rem; }
+  .directory-columns { grid-template-columns: minmax(0, 1fr); gap: 3rem; }
+  .directory-columns h2 { margin-bottom: 1.5rem; }
+  .directory-footer { padding-block: 3rem 2rem; }
+}
+
+/* Shared directory styling and a quiet, fixed grid behind the content. */
+body { isolation: isolate; }
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image: linear-gradient(rgba(215,154,72,.055) 1px, transparent 1px), linear-gradient(90deg, rgba(215,154,72,.055) 1px, transparent 1px);
+  background-size: 80px 80px;
+  mask-image: linear-gradient(to bottom, #000, rgba(0,0,0,.3));
+}
+.container-shell { max-width: 1040px; }
+.directory-name { font-size: 1.5rem; letter-spacing: -.035em; line-height: 1.2; }
+.directory-header .nav-list { gap: 1.5rem; }
+.directory-header .nav-list a { padding: 0; color: var(--muted); }
+.directory-header .nav-list a:hover { color: var(--accent); }
+.directory-header .nav-list a[aria-current] { color: var(--ink); }
+a:hover { color: var(--accent); }
+.page-intro { padding-block: 4rem 3rem; }
+.page-intro h1, .post-header h1 { font-size: clamp(2rem, 4vw, 3rem); line-height: 1.2; margin-block: 0 1rem; }
+.page-intro .lead, .post-description { font-size: 1.05rem; max-width: 680px; }
+.section-space { padding-top: 3.5rem; }
+.section-heading { margin-bottom: 1.5rem; }
+.section-heading h2 { font-size: 1.4rem; margin-top: 0; }
+.archive-list { border: 0; }
+.archive-row { grid-template-columns: minmax(0, 1fr) auto; gap: 2rem; padding-block: 1.5rem; border-bottom: 1px solid rgba(215,154,72,.13); align-items: baseline; }
+.archive-row:first-child { padding-top: 0; }
+.archive-row h3 { font-size: 1.4rem; }
+.archive-year { font-family: inherit; font-size: .8rem; }
+.archive-row .archive-role { font-size: .8rem; margin-top: .5rem; }
+.writing-index { list-style: none; padding: 0; margin: 0; }
+.writing-index li { display: flex; justify-content: space-between; align-items: baseline; gap: 2rem; padding-block: 1.4rem; border-bottom: 1px solid rgba(215,154,72,.13); }
+.writing-index li:first-child { padding-top: 0; }
+.writing-index h2 { font-size: 1.35rem; letter-spacing: -.025em; }
+.writing-index time { white-space: nowrap; color: var(--muted); font-size: .8rem; }
+.experience-organization { color: var(--muted); font-size: .9rem; }
+.experience-entry { border-color: rgba(215,154,72,.13); padding-block: 1.8rem; gap: 2rem; grid-template-columns: minmax(0, .65fr) minmax(0, 2fr); }
+.experience-date, .group-title { font-family: inherit; }
+.experience-entry h3 { font-size: 1.35rem; }
+.about-copy { font-size: 1rem; }
+.about-photo { max-width: 280px; justify-self: end; }
+.tag-list { gap: .5rem 1rem; }
+.tag-list li { border: 0; background: transparent; padding: 0; font-family: inherit; color: var(--muted); }
+.button { border: 0; padding: .5rem 0; min-height: 0; background: transparent; color: var(--ink); }
+.button-primary:hover, .button-secondary:hover { background: transparent; color: var(--accent); }
+.case-facts { border-color: rgba(215,154,72,.13); }
+.case-cover { background: transparent; border: 0; padding: 0; }
+.case-nav-title { font-size: .85rem; color: var(--muted); margin-bottom: 1rem; }
+.post-header { padding-block: 3rem 2rem; }
+.post-prose { max-width: 720px; }
+.directory-footer nav a { padding-block: .5rem; }
+@media (max-width: 760px) {
+  body::before { background-size: 56px 56px; }
+  .directory-name { font-size: 1.3rem; }
+  .directory-header .nav-list { gap: .8rem 1.25rem; font-size: .85rem; }
+  .page-intro { padding-block: 3rem 2rem; }
+  .writing-index li { flex-direction: column; gap: .5rem; }
+  .experience-entry { grid-template-columns: minmax(0, 1fr); gap: .75rem; }
+  .archive-row { gap: 1rem; }
+  .about-photo { justify-self: start; }
+}

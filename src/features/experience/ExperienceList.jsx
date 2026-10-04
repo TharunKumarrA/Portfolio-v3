@@ -6,11 +6,10 @@ export function ExperienceList({ experiences }) {
         <li key={exp.id}>
           <article className="experience-entry">
             <div className="experience-date">
-              <span className="timeline-dot" aria-hidden="true" />
               {dateRange(exp.startDate, exp.endDate)}
             </div>
             <div>
-              <p className="eyebrow">{exp.organization}</p>
+              <p className="experience-organization">{exp.organization}</p>
               <h3>{exp.role}</h3>
               <p>{exp.summary}</p>
               {exp.contributions.length > 0 && (
