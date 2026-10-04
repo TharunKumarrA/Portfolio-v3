@@ -1181,5 +1181,12 @@ a:hover { color: var(--accent); }
 /* Editorial refinements: expressive headings and restrained visual structure. */
 .page-intro h1 { font-size: clamp(2.5rem, 5vw, 4.2rem); margin-block: .8rem 1.3rem; }
 .intro-links { display: flex; flex-wrap: wrap; gap: 1.5rem; margin-top: 1.5rem; }
+.writing-years { display: flex; flex-wrap: wrap; gap: 1.5rem; margin-bottom: 2rem; }
+.writing-years a { font-family: var(--font-space-mono), monospace; font-size: .9rem; border-bottom: 1px solid var(--line); padding-block: .5rem; }
+.writing-years a:hover { border-color: var(--accent); }
+.writing-year { border-color: rgba(215,154,72,.2); }
+.writing-year > h2 { color: var(--accent); }
+.post-list > li + li { border-color: rgba(215,154,72,.12); }
+.post-list .tag-list li { font-size: .75rem; }
 
 /* Compact About and résumé layouts. */
