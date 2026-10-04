@@ -1236,7 +1236,20 @@ a:hover { color: var(--accent); }
 .about-refined .education-row h3 { font-size: 1.1rem; }
 .portrait-frame { position: relative; padding: 10px; border: 1px solid var(--line); background: var(--surface); box-shadow: 10px 10px 0 rgba(73,54,51,.35); overflow: hidden; }
 .portrait-frame .about-photo { display: block; width: 100%; max-width: none; filter: none; }
+.resume-simple { max-width: 850px; }
+.resume-simple .page-intro { padding-block: 3rem 2rem; }
+.resume-simple .page-intro h1 { font-size: 2.5rem; }
+.resume-simple .resume-actions { margin-top: 1rem; gap: 1.5rem; }
+.resume-simple section + section { margin-top: 2rem; }
+.resume-simple section > h2 { font-size: 1.2rem; margin-bottom: 1rem; }
+.resume-entries { list-style: none; padding: 0; margin: 0; }
+.resume-entries li { display: flex; justify-content: space-between; align-items: baseline; gap: 2rem; border-top: 1px solid rgba(215,154,72,.13); padding-block: 1rem; }
+.resume-entries h3 { font-size: 1.05rem; }
+.resume-entries p, .resume-entries span { color: var(--muted); font-size: .85rem; }
+.resume-entries p { margin-top: .25rem; }
+.resume-entries span { white-space: nowrap; }
 @media (max-width: 760px) {
   .about-refined .about-page { grid-template-columns: minmax(0,1fr); gap: 1.5rem; }
   .portrait-frame { max-width: 300px; margin-bottom: .5rem; }
+  .resume-entries li { flex-direction: column; gap: .4rem; }
 }

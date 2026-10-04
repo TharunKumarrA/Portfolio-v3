@@ -1,65 +1,38 @@
+import Link from "next/link";
 import { Container } from "@/components/layout/Container";
-import { ExperienceList } from "@/features/experience/ExperienceList";
 import { experiences } from "@/content/experiences";
 import { profile } from "@/content/profile";
+import { dateRange } from "@/lib/dates";
 import { pageMetadata } from "@/lib/site";
-export const metadata = pageMetadata(
-  "Résumé",
-  "Experience, education, and a downloadable résumé for Tharun Kumar A.",
-  "/resume",
-);
+export const metadata = pageMetadata("Résumé", "Experience, education, and a downloadable résumé for Tharun Kumar A.", "/resume");
 export default function Resume() {
-  return (
-    <Container>
-      <div className="page-intro">
-        <h1>Résumé</h1>
-        <p className="lead">{profile.introduction}</p>
-        <div className="resume-actions">
-          <a
-            className="button button-primary"
-            href="/resume.pdf"
-            download="Tharun-Kumarr-A-Resume.pdf"
-          >
-            Download PDF ↓
-          </a>
-          <a
-            className="button button-secondary"
-            href="/resume.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Open PDF ↗
-          </a>
-        </div>
-        <p className="resume-note">
-          The downloadable PDF is the April 2025 edition. The experience below
-          reflects the current profile.
-        </p>
+  return <Container className="resume-simple">
+    <header className="page-intro">
+      <h1>Résumé</h1>
+      <p className="lead">{profile.current}</p>
+      <div className="resume-actions">
+        <a className="text-link" href="/resume.pdf" download="Tharun-Kumar-A-Resume.pdf">Download PDF ↓</a>
+        <a className="text-link" href="/resume.pdf" target="_blank" rel="noopener noreferrer">Open PDF ↗</a>
       </div>
-      <div className="resume-summary">
-        <h2>Professional experience</h2>
-        <ExperienceList
-          experiences={experiences.filter((e) => e.category === "professional")}
-        />
-        <h2>Education</h2>
-        {profile.education.map((e) => (
-          <div className="education-row" key={e.school}>
-            <div>
-              <h3>{e.school}</h3>
-              <p>{e.qualification}</p>
-            </div>
-            <p>{e.dates}</p>
-          </div>
-        ))}
-        <h2>Technical skills</h2>
-        <p>{profile.skills.flatMap((s) => s.items).join(" · ")}</p>
-      </div>
-      <iframe
-        className="resume-frame"
-        src="/resume.pdf"
-        title="Tharun Kumar A résumé — April 2025"
-        loading="lazy"
-      />
-    </Container>
-  );
+      <p className="resume-note">PDF edition: April 2025. Current experience is listed below.</p>
+    </header>
+    <section aria-labelledby="resume-work">
+      <h2 id="resume-work">Experience</h2>
+      <ul className="resume-entries">{experiences.filter(exp => exp.category === "professional").map(exp => <li key={exp.id}>
+        <div><h3>{exp.role}</h3><p>{exp.organization}</p></div>
+        <span>{dateRange(exp.startDate, exp.endDate)}</span>
+      </li>)}</ul>
+      <Link className="text-link" href="/experience">Full experience →</Link>
+    </section>
+    <section aria-labelledby="resume-education">
+      <h2 id="resume-education">Education</h2>
+      <ul className="resume-entries">{profile.education.map(item => <li key={item.school}>
+        <div><h3>{item.school}</h3><p>{item.qualification}</p></div><span>{item.dates}</span>
+      </li>)}</ul>
+    </section>
+    <section aria-labelledby="resume-skills">
+      <h2 id="resume-skills">Skills</h2>
+      <p className="muted">{profile.skills.flatMap(group => group.items).join(" · ")}</p>
+    </section>
+  </Container>;
 }
