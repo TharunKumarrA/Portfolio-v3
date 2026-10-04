@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { Container } from "@/components/layout/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { profile } from "@/content/profile";
@@ -10,9 +11,11 @@ export const metadata = pageMetadata(
 );
 export default function About() {
   return (
-    <Container>
+    <Container className="about-refined">
       <div className="page-intro">
-        <h1>About me</h1>
+        <p className="eyebrow">About me</p>
+        <h1>Vanakam! <span className="accent">I’m Tharun.</span></h1>
+        <p className="lead">A software developer with a curious mind, based in India.</p>
       </div>
       <div className="about-page">
         <div className="about-copy">
@@ -27,18 +30,21 @@ export default function About() {
             Beyond the screen, I enjoy space, geopolitics, non-fiction, music,
             and sport.
           </p>
+          <div className="intro-links"><Link className="text-link" href="/experience">View experience →</Link><Link className="text-link" href="/resume">Résumé ↗</Link></div>
           <a className="text-link mt-6" href={profile.links.linkedin}>
             Connect on LinkedIn ↗
           </a>
         </div>
+        <div className="portrait-frame">
         <Image
           className="about-photo"
           src="/images/tharun.webp"
           alt="Tharun Kumar A"
           width={760}
           height={760}
-          sizes="(min-width: 768px) 35vw, 100vw"
+          sizes="(min-width: 768px) 320px, 100vw"
         />
+        </div>
       </div>
       <section className="section-space" aria-labelledby="skills-heading">
         <SectionHeading
@@ -78,7 +84,7 @@ export default function About() {
           title="Outside work"
           id="interests-heading"
         />
-        <ul className="tag-list">
+        <ul className="interests-list">
           {profile.interests.map((i) => (
             <li key={i}>{i}</li>
           ))}

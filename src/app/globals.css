@@ -1203,12 +1203,40 @@ a:hover { color: var(--accent); }
 .refined-projects .project-card-copy h3 { font-size: 2rem; }
 .refined-projects .project-image { box-shadow: 0 12px 24px #0003; }
 .refined-projects .image-arrow { width: 32px; height: 32px; font-size: 1rem; background: var(--canvas); color: var(--accent); }
+.about-page { grid-template-columns: minmax(0,1.5fr) minmax(0,1fr); gap: 3rem; }
+.about-photo { max-width: 100%; border-radius: 2px; }
+.about-copy > p:first-child { color: var(--ink); font-size: 1.15rem; }
+.skills-grid { gap: 2rem; }
+.skill-group h3 { color: var(--accent); }
+.interests-list { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 1rem 2rem; color: var(--muted); }
+.interests-list li { padding-block: .5rem; border-bottom: 1px solid var(--line); }
 @media (max-width: 760px) {
   .directory-intro { padding-block: 3rem; }
   .directory-columns section + section { padding-left: 0; border-left: 0; border-top: 1px solid var(--line); padding-top: 2rem; }
   .refined-projects .project-card { grid-template-columns: minmax(0,1fr); gap: 1.5rem; padding-bottom: 2rem; }
   .refined-projects .project-image-link { padding: 1rem; }
+  .about-page { grid-template-columns: minmax(0,1fr); gap: 2rem; }
+  .about-photo { max-width: 360px; }
 }
 .directory-intro p.eyebrow { font-size: .72rem; line-height: 1.7; letter-spacing: .1em; }
 
 /* Compact About and résumé layouts. */
+.about-refined .page-intro { padding-block: 2.5rem 1.8rem; }
+.about-refined .page-intro h1 { font-size: clamp(2rem, 4vw, 3rem); margin-block: .7rem 1rem; }
+.about-refined .about-page { grid-template-columns: minmax(0, 1fr) 300px; gap: 2.5rem; }
+.about-refined .about-copy > p:first-child { font-size: 1rem; }
+.about-refined .about-copy p + p { margin-top: .9rem; }
+.about-refined .intro-links { margin-top: 1rem; gap: 1.25rem; }
+.about-refined .section-space { padding-top: 2rem; }
+.about-refined .section-heading { margin-bottom: 1rem; }
+.about-refined .section-heading h2 { font-size: 1.3rem; }
+.about-refined .skill-group { padding-top: 1rem; }
+.about-refined .skill-group h3 { color: var(--ink); font-size: 1.05rem; margin-bottom: .5rem; }
+.about-refined .education-row { padding-block: 1rem; }
+.about-refined .education-row h3 { font-size: 1.1rem; }
+.portrait-frame { position: relative; padding: 10px; border: 1px solid var(--line); background: var(--surface); box-shadow: 10px 10px 0 rgba(73,54,51,.35); overflow: hidden; }
+.portrait-frame .about-photo { display: block; width: 100%; max-width: none; filter: none; }
+@media (max-width: 760px) {
+  .about-refined .about-page { grid-template-columns: minmax(0,1fr); gap: 1.5rem; }
+  .portrait-frame { max-width: 300px; margin-bottom: .5rem; }
+}
