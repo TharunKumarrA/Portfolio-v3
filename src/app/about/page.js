@@ -1,9 +1,8 @@
-import Image from "next/image";
 import Link from "next/link";
 import { Container } from "@/components/layout/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { MinecraftAccent } from "@/components/ui/MinecraftAccent";
-import { PlayerNameplate } from "@/components/ui/PlayerNameplate";
+import { ProfileImageSwitcher } from "@/components/ui/ProfileImageSwitcher";
 import { profile } from "@/content/profile";
 import { pageMetadata } from "@/lib/site";
 export const metadata = pageMetadata(
@@ -37,17 +36,7 @@ export default function About() {
             Connect on LinkedIn ↗
           </a>
         </div>
-        <div className="portrait-frame">
-        <PlayerNameplate displayName="Tharun" />
-        <Image
-          className="about-photo"
-          src="/images/tharun.webp"
-          alt="Tharun Kumar A"
-          width={760}
-          height={760}
-          sizes="(min-width: 768px) 320px, 100vw"
-        />
-        </div>
+        <ProfileImageSwitcher />
       </div>
       <section className="section-space" aria-labelledby="skills-heading">
         <SectionHeading

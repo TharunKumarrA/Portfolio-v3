@@ -5,9 +5,9 @@ import { getPublishedPosts } from "@/features/blog/posts";
 import { MinecraftAccent } from "@/components/ui/MinecraftAccent";
 
 const projectDescriptions = {
-  sustain: "AI resource-usage estimates",
-  "pragati-2025": "Event registration and payments",
-  "molecule-visualizer": "Interactive 3D molecular geometry",
+  sustain: "AI resource-use estimates for sustainable software decisions",
+  "pragati-2025": "Event registration and payments for Pragati ’25",
+  "molecule-visualizer": "Interactive 3D molecular geometry for learning",
 };
 const writingSlugs = [
   "from-the-other-side",
@@ -32,7 +32,10 @@ export default async function Home() {
         <p className="eyebrow pixel-label">Software & stories</p>
         <p className="directory-statement">I build software.<br /><span className="accent">And sometimes I write.</span></p>
         <p className="muted">Web applications, automation tools, and notes from the journey.<br />Currently an Analyst at Goldman Sachs.</p>
-        <div className="intro-links"><Link className="text-link" href="/about">More about me ↗</Link><Link className="text-link" href="/experience">View experience →</Link></div>
+        <div className="intro-links">
+          <Link className="text-link hero-work-cta" href="/experience">View experience →</Link>
+          <Link className="text-link" href="/about">More about me ↗</Link>
+        </div>
       </section>
       <div className="directory-columns">
         <section aria-labelledby="built-heading">
