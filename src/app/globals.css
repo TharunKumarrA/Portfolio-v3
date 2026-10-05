@@ -221,20 +221,6 @@ a:focus-visible .minecraft-accent,
 .nav-list a[aria-current] {
   color: var(--ink);
 }
-.nav-scramble {
-  display: inline-block;
-  height: 1em;
-  line-height: 1;
-  vertical-align: -.08em;
-}
-.nav-scramble__text { display: block; line-height: 1; }
-.nav-scramble__text--pixel {
-  position: relative;
-  top: .02em;
-  font-family: var(--font-pixelify), var(--font-space-mono), monospace;
-  font-size: 1.1em;
-  letter-spacing: -.03em;
-}
 .nav-list a[aria-current] {
   text-decoration: underline;
   text-underline-offset: 8px;
