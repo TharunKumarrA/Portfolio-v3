@@ -26,6 +26,12 @@ const iconPaths = {
       <path d="m5 19 5-5 2 2 6-7" />
     </>
   ),
+  bookmark: (
+    <>
+      <path d="M6 3h12v18l-6-4-6 4V3Z" />
+      <path d="M9 7h6M9 10h4" />
+    </>
+  ),
 };
 
 /** A small, original pixel-line accent for page-level labels and links. */

@@ -10,6 +10,7 @@ export const projects = [
     year: "2025",
     technologies: ["React", "Flask", "Vertex AI", "AutoML", "ExpressJS"],
     featuredOrder: 1,
+    proof: "Co-developed a Chrome extension released on the Chrome Web Store.",
     image: {
       src: "/projects/sustain.webp",
       alt: "SustAIn application interface",
@@ -46,6 +47,7 @@ export const projects = [
     year: "2025",
     technologies: ["Next.js", "Tailwind CSS", "GSAP", "Node.js"],
     featuredOrder: 2,
+    proof: "Led frontend development and coordinated a 14-member delivery team.",
     image: {
       src: "/projects/pragati-2025.webp",
       alt: "Pragati ’25 application interface",
@@ -262,6 +264,7 @@ export const projects = [
     year: "2024",
     technologies: ["React", "PlotlyJS", "Gemini API", "MUI"],
     featuredOrder: 3,
+    proof: "Contributed the frontend and algorithms behind interactive 3D molecule exploration.",
     image: {
       src: "/projects/molecule-visualizer.webp",
       alt: "Molecule Visualizer application interface",

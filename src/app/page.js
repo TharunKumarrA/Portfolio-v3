@@ -4,6 +4,7 @@ import { getFeaturedProjects } from "@/features/projects/selectors";
 import { getPublishedPosts } from "@/features/blog/posts";
 import { MinecraftAccent } from "@/components/ui/MinecraftAccent";
 import { HeroTypefaceWord } from "@/components/ui/HeroTypefaceWord";
+import { profile } from "@/content/profile";
 
 const projectDescriptions = {
   sustain: "AI resource-use estimates for sustainable software decisions",
@@ -38,10 +39,19 @@ export default async function Home() {
         </p>
         <p className="muted">Web applications, automation tools, and notes from the journey.<br />Currently an Analyst at Goldman Sachs.</p>
         <div className="intro-links">
-          <Link className="text-link hero-work-cta" href="/experience">View experience →</Link>
+          <Link className="text-link hero-work-cta" href="/projects">See selected work</Link>
           <Link className="text-link" href="/about">More about me ↗</Link>
         </div>
       </section>
+      <aside className="now-block" aria-label="Now">
+        <p className="eyebrow pixel-label">Now</p>
+        <dl>
+          <div><dt>Role</dt><dd>{profile.current}</dd></div>
+          <div><dt>Building</dt><dd>{profile.nowDetails.building}</dd></div>
+          <div><dt>Learning</dt><dd>{profile.nowDetails.learning}</dd></div>
+          <div><dt>Based</dt><dd>{profile.nowDetails.location}</dd></div>
+        </dl>
+      </aside>
       <div className="directory-columns">
         <section aria-labelledby="built-heading">
           <h2 id="built-heading"><MinecraftAccent icon="crafting" decorative />Things I’ve <span className="accent">built</span></h2>

@@ -15,6 +15,7 @@ for (const p of projects) {
     if (ranks.has(p.featuredOrder)) errors.push("Duplicate featured order");
     ranks.add(p.featuredOrder);
     if (!p.image) errors.push("Featured projects need an image");
+    if (!p.proof?.trim()) errors.push(`${p.slug}: featured projects need a proof line`);
   }
   if (
     p.image &&

@@ -8,6 +8,11 @@ export const profile = {
   about:
     "Vanakam! I’m Tharun, a Computer Science graduate from Amrita Vishwa Vidyapeetham. My work spans web applications, event platforms, administrative dashboards, and AI-enabled tools. I enjoy turning an idea into something people can actually use.",
   now: "At Goldman Sachs, I build automation solutions for operational workflows. Alongside that work, I’m interested in full-stack software engineering and the decisions that make applications useful, maintainable, and clear.",
+  nowDetails: {
+    location: "India · IST",
+    building: "Automation solutions for operational workflows",
+    learning: "Full-stack engineering and product decisions",
+  },
   links: {
     github: "https://github.com/TharunKumarrA",
     linkedin: "https://www.linkedin.com/in/tharun-kumarr/",
