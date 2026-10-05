@@ -5,7 +5,7 @@ import { Container } from "./Container";
 import { Navigation } from "./Navigation";
 export function Header() {
   const home = usePathname() === "/";
-  const name = <Link href="/" aria-label="Tharun — home">Tharun<span className="directory-accent" aria-hidden="true">●</span></Link>;
+  const name = <Link href="/" aria-label="Tharun — home">Tharun<span className="directory-accent" aria-hidden="true">.</span></Link>;
   return <header className="directory-header">
     <Container className="directory-header-inner">
       {home ? <h1>{name}</h1> : <p className="directory-name">{name}</p>}

@@ -1143,9 +1143,9 @@ a:focus-visible .minecraft-accent,
 }
 .directory-accent {
   color: var(--accent);
-  margin-left: .55rem;
-  font-size: .5em;
-  vertical-align: .15em;
+  margin-left: .12em;
+  font-size: 1.3em;
+  vertical-align: -.04em;
 }
 .directory-header nav,
 .directory-footer nav {
