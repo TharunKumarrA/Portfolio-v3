@@ -283,14 +283,6 @@ a:focus-visible .minecraft-accent,
   letter-spacing: -0.055em;
   line-height: 1.15;
 }
-.hero-mark {
-  font-size: clamp(5rem, 12vw, 10rem);
-  line-height: 1;
-  color: var(--accent);
-  margin-inline: 2rem;
-  display: block;
-  flex-shrink: 0;
-}
 .hero-bottom {
   display: flex;
   justify-content: space-between;
@@ -846,10 +838,6 @@ a:focus-visible .minecraft-accent,
   }
 }
 @media (max-width: 1050px) {
-  .hero-mark {
-    margin-inline: 0.5rem;
-    font-size: 6rem;
-  }
   .hero-bottom {
     align-items: start;
     flex-direction: column;
@@ -895,9 +883,6 @@ a:focus-visible .minecraft-accent,
   }
   .hero h1 {
     font-size: clamp(2.2rem, 6.5vw, 3.7rem);
-  }
-  .hero-mark {
-    display: none;
   }
   .hero-bottom {
     padding-bottom: 2.5rem;
@@ -1260,18 +1245,8 @@ a:hover { color: var(--accent); }
 .directory-intro { padding-block: 4.5rem 3.5rem; }
 .directory-intro .eyebrow { font-size: .72rem; letter-spacing: .1em; }
 .directory-intro .directory-statement { font-size: clamp(2.6rem, 5vw, 4.4rem); line-height: 1.12; letter-spacing: -.055em; margin-block: 1.3rem; }
-.hero-typeface-word {
-  display: inline-block;
-  white-space: nowrap;
-  line-height: 1;
-}
-.hero-typeface-word--pixel {
-  font-family: var(--font-pixelify), var(--font-space-mono), monospace;
-  font-size: 1.1em;
-  letter-spacing: -.04em;
-  vertical-align: -.04em;
-}
 .directory-intro .muted { max-width: 580px; }
+.writing-secondary-links { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 1rem; }
 .intro-links { display: flex; flex-wrap: wrap; align-items: center; gap: 1.5rem; margin-top: 1.5rem; }
 .hero-work-cta {
   min-height: 44px;
@@ -1359,11 +1334,6 @@ a:hover { color: var(--accent); }
   object-fit: cover;
   object-position: center 34%;
   filter: brightness(1.08) contrast(1.05) saturate(.96);
-}
-.profile-image { animation: portrait-fade 160ms ease-out; }
-@keyframes portrait-fade {
-  from { opacity: .45; }
-  to { opacity: 1; }
 }
 .portrait-toggle {
   display: inline-flex;

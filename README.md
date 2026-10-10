@@ -1,6 +1,6 @@
 # Portfolio v3
 
-Tharun Kumarr A’s portfolio, rebuilt with Next.js App Router, React, JavaScript, Tailwind CSS, Framer Motion, and React Icons. V2 remains a separate repository.
+Tharun Kumarr A’s portfolio, rebuilt with Next.js App Router, React, JavaScript, Tailwind CSS, and React Icons. V2 remains a separate repository.
 
 ## Run
 

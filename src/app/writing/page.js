@@ -8,6 +8,9 @@ export const metadata = pageMetadata('Writing', 'Essays and notes on software, s
 export default async function WritingPage() {
   const posts = await getPublishedPosts();
   return <Container><header className="page-intro"><p className="eyebrow eyebrow-with-accent"><MinecraftAccent icon="book" decorative />Essays & notes</p><h1>Writing<span className="accent">, and life.</span></h1><p className="lead">Writing about software, work, and the questions I keep returning to.</p>
-    {getSiteOrigin() && <Link className="text-link" href="/rss.xml">Subscribe via RSS</Link>}
+    <p className="writing-secondary-links">
+      <Link className="text-link" href="/clippings">Browse clippings</Link>
+      {getSiteOrigin() && <> <span aria-hidden="true">·</span> <Link className="text-link" href="/rss.xml">Subscribe via RSS</Link></>}
+    </p>
   </header><PostList posts={posts} /></Container>;
 }
